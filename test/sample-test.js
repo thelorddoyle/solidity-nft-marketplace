@@ -44,6 +44,5 @@ describe("NFTMarket", function () {
     
     console.log('items: ', items)
 
-
   });
 });
