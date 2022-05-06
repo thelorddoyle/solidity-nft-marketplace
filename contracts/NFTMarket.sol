@@ -11,7 +11,7 @@ contract NFTMarket is ReentrancyGuard {
   Counters.Counter private _itemsSold;
 
   address payable owner;
-  uint256 listingPrice = 0.025 ether;
+  uint256 listingPrice = 0.00025 ether;
 
   constructor() {
     owner = payable(msg.sender);
@@ -87,7 +87,6 @@ contract NFTMarket is ReentrancyGuard {
     payable(owner).transfer(listingPrice);
   }
 
-    /* Returns all unsold market items */
   function fetchMarketItems() public view returns (MarketItem[] memory) {
     uint itemCount = _itemIds.current();
     uint unsoldItemCount = _itemIds.current() - _itemsSold.current();
